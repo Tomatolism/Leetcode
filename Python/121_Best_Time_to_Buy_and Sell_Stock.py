@@ -24,9 +24,3 @@ class Solution:
         return max_profit
       
       
-      
-"""
-Miss case:
-1. When interval == []
-2. When Newinterval is large than all in interval 
-"""
