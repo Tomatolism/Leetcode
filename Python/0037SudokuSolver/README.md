@@ -16,4 +16,44 @@
 DFS 的程式架構通常使用遞迴方式實現，因為 DFS 的過程天然具有遞迴的性質，可以使用遞迴深度來記錄節點的訪問順序，並方便地回溯到上一個節點。此外，也可以使用類似堆疊（Stack）的資料結構來模擬遞迴過程，實現非遞迴的 DFS。在選擇相鄰節點時，DFS 沒有固定的選擇策略，可以根據具體應用場景進行調整，例如選擇第一個相鄰節點、最後一個相鄰節點、或者根據某種權重來選擇相鄰節點等。
 
 
-下面為一個p
+下面為一個python 範例
+
+```python
+# 定義圖的節點類別
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.neighbors = []
+        self.visited = False
+
+# 深度優先搜索函數
+def dfs(node):
+    # 標記當前節點為已訪問
+    node.visited = True
+    print("訪問節點：", node.val)
+    
+    # 遍歷當前節點的相鄰節點
+    for neighbor in node.neighbors:
+        # 如果相鄰節點未被訪問，則遞迴調用 dfs 函數
+        if not neighbor.visited:
+            dfs(neighbor)
+
+# 創建一個簡單的圖
+#    1
+#  /   \
+# 2     3
+#      / \
+#     4   5
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+node4 = Node(4)
+node5 = Node(5)
+
+# 建立節點之間的相鄰關係
+node1.neighbors = [node2, node3]
+node3.neighbors = [node4, node5]
+
+# 從節點1開始進行深度優先搜索
+dfs(node1)
+```
