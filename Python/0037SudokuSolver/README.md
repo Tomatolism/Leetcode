@@ -1,3 +1,10 @@
+## coding反省
+- 第一次寫DFS還要再複習
+- 9x9方塊的部分，正確的定義為square_i, square_j = i//3*3, j//3*3 
+- 執行dfs(0,0)就會自動in-place修改board的內容。
+- 因為是唯一解，因此會持續in place修改board內容。直到正確為止
+- index的細節設定要注意
+
 
 ## 「深度優先搜索」說明 by ChatGPT
 
