@@ -1,0 +1,2 @@
+- constrain：中位數的位置必為兩個list的平均值。
+- 用這個constrain，可以只在比較短的list設定two pointer跟partition。讓長的list的partition跟著連動
